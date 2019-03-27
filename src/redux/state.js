@@ -1,4 +1,6 @@
 import Avatar from '../img/avatar.jpg';
+import { renderEntireTree } from '../render';
+
 let state = {
     profilePage: {
         postData :[
@@ -9,7 +11,8 @@ let state = {
             {id:5, message:"Go go go", like: 18},
             {id:5, message:"^-^", like: 11},
             {id:6, message:"*-*", like: 1}
-        ]
+        ],
+        newPostText:'text'
     },
     messagesPage: {
         friendData :[
@@ -30,11 +33,17 @@ let state = {
 export let addPost = (newPostElement) => {
     let newsPost = {
         id: 7,
-        message: newPostElement,
+        message: state.profilePage.newPostText,
         like: 0
     };
-
     state.profilePage.postData.push(newsPost);
+    state.profilePage.newPostText = '';
+    renderEntireTree(state);
+}
+
+export let apdateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    renderEntireTree(state);   
 }
 
 export default state;

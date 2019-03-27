@@ -7,7 +7,12 @@ const Profile = (props) => {
     return (
       <section className="Profile">
         <ProfileInfo />
-        <Post postData={props.state.postData} addPost={props.addPost} />
+        <Post 
+          postData={props.profilePage.postData} 
+          newPostText={props.profilePage.newPostText} 
+          addPost={props.addPost}
+          apdateNewPostText={props.apdateNewPostText}
+        />
       </section>
     );
 }
