@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+import './App.scss';
+import Header from './Component/Header/Header';
+import Profile from './Component/Profile/Profile';
+import Message from './Component/Message/Message';
+import News from './Component/News/News';
+import Setting from './Component/Setting/Setting';
+import Music from './Component/Music/Music';
+import Footer from './Component/Footer/Footer';
 
-class App extends Component {
-  render() {
+const App = (props) => {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>
+        <div className="wrapper" id="wrapper">
+          <Header />
+            <main className="main" id="main">
+              <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} addPost={props.addPost}/> }/>
+              <Route path='/Message' render={ () => <Message state={props.state.messagesPage}/> }/>
+              <Route path='/News'    render={ () => <News/> }/>
+              <Route path='/Setting' render={ () => <Setting/> }/>
+              <Route path='/Music'   render={ () => <Music/> }/>
+            </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
     );
-  }
 }
 
 export default App;

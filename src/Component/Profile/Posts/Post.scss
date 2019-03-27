@@ -1,0 +1,26 @@
+.Post {
+    width: 100%;
+    margin: 2rem;
+}
+
+.Post-send {
+    button {
+        background-color: #3578E5;
+        outline: none;
+        border: none;
+        color: #FFFFFF;
+        font-size: 1.1rem;
+        padding: 0.2rem 1.5rem;
+    }
+}
+
+textarea { 
+    resize: none;
+    height: 60px;
+    width: 99%;
+    font-size: 1.25rem;
+}
+
+.Post-add {
+    margin-bottom: 2rem;
+}

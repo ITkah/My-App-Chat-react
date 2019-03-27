@@ -1,0 +1,20 @@
+.MessageDialog {
+    margin: 1rem;
+    width: 80%;
+}
+
+.MessageDialogItem_send {
+    display: flex;
+    textarea {
+        height: 30px;
+    }
+
+    button {
+        background-color: #3578E5;
+        outline: none;
+        border: none;
+        color: #FFFFFF;
+        font-size: 1.1rem;
+        padding: 0.2rem 1.5rem;
+    }
+}
