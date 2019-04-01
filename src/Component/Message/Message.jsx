@@ -6,8 +6,12 @@ import MessageDialog from './MessageDialog/MessageDialog'
 const Message = (props) => {
     return (
       <section className="Message">
-        <MessageFriend  friendData={props.state.friendData}/>
-        <MessageDialog  messageData={props.state.messageData}/>
+        <MessageFriend  
+          store={props.store}
+        />
+        <MessageDialog  
+          store={props.store}
+        />
       </section>
     );
 }

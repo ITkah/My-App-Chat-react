@@ -3,8 +3,11 @@ import './MessageFriend.scss';
 import MessageFriendItem from './MessageFriendItem/MessageFriendItem';
 
 const MessageFriend = (props) => {
+  let state = props.store.getState().messagesPage;
+
   let FriendElements =
-      props.friendData.map((friend,index) => <MessageFriendItem key={index} id={friend.id} name={friend.name} />);
+    state.friendData.map((friend,index) => <MessageFriendItem key={index} id={friend.id} name={friend.name} />);
+    
     return (
       <div className="MessageFriend">
         { FriendElements }

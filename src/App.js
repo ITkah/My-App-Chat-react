@@ -17,11 +17,12 @@ const App = (props) => {
             <main className="main" id="main">
               <Route path='/Profile' render={ () => 
               <Profile 
-                profilePage={props.state.profilePage} 
-                addPost={props.addPost}
-                apdateNewPostText={props.apdateNewPostText}
+                store={props.store}
               />}/>
-              <Route path='/Message' render={ () => <Message state={props.state.messagesPage}/> }/>
+              <Route path='/Message' render={ () => 
+              <Message 
+                store={props.store}
+              />}/>
               <Route path='/News'    render={ () => <News/> }/>
               <Route path='/Setting' render={ () => <Setting/> }/>
               <Route path='/Music'   render={ () => <Music/> }/>
